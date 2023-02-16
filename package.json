@@ -1,0 +1,44 @@
+{
+  "name": "x6-hooks",
+  "version": "1.0.0",
+  "type": "module",
+  "files": [
+    "react.js",
+    "react.d.ts",
+    "vue.js"
+  ],
+  "keywords": [
+    "antv",
+    "x6",
+    "graph",
+    "svg",
+    "vue",
+    "react",
+    "hooks",
+    "typescript"
+  ],
+  "module": "react.js",
+  "types": "react.d.ts",
+  "author": "lloydzhou",
+  "license": "MIT",
+  "homepage": "https://github.com/lloydzhou/x6-hooks",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lloydzhou/x6-hooks.git"
+  },
+  "dependencies": {},
+  "scripts": {
+    "update": "git submodule update",
+    "install:react": "cd react && yarn install",
+    "install:vue": "cd vue && yarn install",
+    "install": "run-p install:react install:vue",
+    "build:react": "cd react && yarn run build",
+    "build:vue": "cd vue && yarn run vite build",
+    "build:source": "run-p build:react build:vue",
+    "build:copy": "cp react/dist/lib/hooks.d.ts ./react.d.ts && cp react/dist/hooks.js ./react.js && cp vue/dist/hooks.mjs ./vue.js",
+    "build": "run-p build:source build:copy"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

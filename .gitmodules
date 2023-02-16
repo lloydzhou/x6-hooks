@@ -1,0 +1,6 @@
+[submodule "react"]
+	path = react
+	url = https://github.com/lloydzhou/antv-x6-react-practice
+[submodule "vue"]
+	path = vue
+	url = https://github.com/lloydzhou/antv-x6-vue-practice
