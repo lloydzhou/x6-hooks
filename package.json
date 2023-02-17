@@ -1,9 +1,14 @@
 {
   "name": "x6-hooks",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "files": [
-    "dist"
+    "utils.js",
+    "utils.d.ts",
+    "react.js",
+    "react.d.ts",
+    "vue.js",
+    "vue.d.ts"
   ],
   "keywords": [
     "antv",
@@ -15,7 +20,7 @@
     "hooks",
     "typescript"
   ],
-  "module": "dist/react.js",
+  "module": "react.js",
   "author": "lloydzhou",
   "license": "MIT",
   "homepage": "https://github.com/lloydzhou/x6-hooks",
@@ -33,9 +38,9 @@
     "build:vue": "cd vue && yarn run build",
     "build:source": "run-p build:react build:vue",
     "build:clean": "rm -rf dist && mkdir -p dist",
-    "build:copy:utils": "cp react/dist/utils.js dist/utils.js && cp react/dist/utils.d.ts dist",
-    "build:copy:react": "cp react/dist/hooks.d.ts dist/react.d.ts && cp react/dist/hooks.js dist/react.js",
-    "build:copy:vue": "cp vue/dist/hooks.js dist/vue.js && cp vue/dist/hooks.d.ts dist/vue.d.ts",
+    "build:copy:utils": "cp react/dist/utils.js ./utils.js && cp react/dist/utils.d.ts ./",
+    "build:copy:react": "cp react/dist/hooks.d.ts ./react.d.ts && cp react/dist/hooks.js ./react.js",
+    "build:copy:vue": "cp vue/dist/hooks.js ./vue.js && cp vue/dist/hooks.d.ts ./vue.d.ts",
     "build:copy": "run-p build:copy:utils build:copy:react build:copy:vue",
     "build": "run-s build:source build:clean build:copy"
   },
