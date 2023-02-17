@@ -80,8 +80,12 @@ const addEdge = () => {
 
 ## examples
 
+## react
 [react demo](https://codesandbox.io/s/antv-x6-react-graph-demo-6ere13)
 
+[mindmap demo](https://codesandbox.io/s/x6-hooks-react-mindmap-demo-2t6954?file=/src/App.js)
+
+## vue
 [vue demo](https://codesandbox.io/s/x6-hooks-vue-demo-j19slj)
 
 
