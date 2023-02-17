@@ -57,8 +57,8 @@ onMounted(() => {
 
 const addNode = () => {
   // add node to nodes array
-  setNodes([
-    ...nodes,
+  state.setNodes([
+    ...state.nodes,
     {
       id: 'id_xxx',
       ...
@@ -67,8 +67,8 @@ const addNode = () => {
 }
 
 const addEdge = () => {
-  setEdges([
-    ...edges,
+  state.setEdges([
+    ...state.edges,
     {
       source,
       target
