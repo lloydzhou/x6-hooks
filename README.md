@@ -75,11 +75,9 @@ const removeEdge = useCallback((edgeId) => {
 ```
 import { useGraphState } from 'x6-hooks/vue'
 
-// 这里不能直接解包，直接解包之后可能导致拿到的nodes不变化
-const state = useGraphState()
+const { nodes, edges, graph, setNodes, setEdges, setGraph } = useGraphState()
 
 onMounted(() => {
-  const { setNodes, setEdges, setGraph } = state
   const graph = new X6.Graph({ ...  })
   setGraph(graph)
 
@@ -89,10 +87,9 @@ onMounted(() => {
 })
 
 const addNode = () => {
-  const { setNodes, nodes } = state
   // add node to nodes array
   setNodes([
-    ...nodes,
+    ...nodes.value,  // nodes is ref
     {
       id: 'id_xxx',
       ...
@@ -101,9 +98,8 @@ const addNode = () => {
 }
 
 const addEdge = () => {
-  const { setEdges, edges } = state
   setEdges([
-    ...edges,
+    ...edges.value, // nodes is ref
     {
       source,
       target
@@ -112,10 +108,9 @@ const addEdge = () => {
 }
 
 const removeNode = (nodeId) => {
-  const { nodes, setNodes, edges, setEdges } = state
-  setNodes(nodes.filter(node => node.id !== nodeId))
+  setNodes(nodes.value.filter(node => node.id !== nodeId))
   // remove related edges
-  setEdges(edges.filter(edge => {
+  setEdges(edges.value.filter(edge => {
     if (edge.source === nodeId || edge.source.cell === nodeId) {
       return false
     }
@@ -127,8 +122,7 @@ const removeNode = (nodeId) => {
 }
 
 const removeEdge = (edgeId) => {
-  const { setEdges, edges } = state
-  setEdges(edges.filter(edge => edge.id !== edgeId))
+  setEdges(edges.value.filter(edge => edge.id !== edgeId))
 }
 
 ```
