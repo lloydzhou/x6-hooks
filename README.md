@@ -12,6 +12,10 @@ const { nodes, setNodes, edges, setEdges, graph, setGraph } = useGraphState()
 useEffect(() => {
   const graph = new X6.Graph({ ...  })
   setGraph(graph)
+
+  // init data
+  setNodes([...])
+  setEdges([...])
 }, [])
 
 const addNode = useCallback(() => {
@@ -74,9 +78,10 @@ onMounted(() => {
 })
 
 const addNode = () => {
+  const { setNodes, nodes } = state
   // add node to nodes array
-  state.setNodes([
-    ...state.nodes,
+  setNodes([
+    ...nodes,
     {
       id: 'id_xxx',
       ...
@@ -85,8 +90,9 @@ const addNode = () => {
 }
 
 const addEdge = () => {
-  state.setEdges([
-    ...state.edges,
+  const { setEdges, edges } = state
+  setEdges([
+    ...edges,
     {
       source,
       target
