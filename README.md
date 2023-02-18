@@ -50,7 +50,7 @@ const removeNode = useCallback((nodeId) => {
 }, [nodes, edges])
 
 const removeEdge = useCallback((edgeId) => {
-  setNodes(edges.filter(edge => edge.id !== edgeId))
+  setEdges(edges.filter(edge => edge.id !== edgeId))
 }, [edges])
 
 ```
@@ -95,9 +95,10 @@ const addEdge = () => {
 }
 
 const removeNode = (nodeId) => {
-  state.setNodes(state.nodes.filter(node => node.id !== nodeId))
+  const { nodes, setNodes, edges, setEdges } = state
+  setNodes(nodes.filter(node => node.id !== nodeId))
   // remove related edges
-  state.setEdges(state.edges.filter(edge => {
+  setEdges(edges.filter(edge => {
     if (edge.source === nodeId || edge.source.cell === nodeId) {
       return false
     }
@@ -109,7 +110,8 @@ const removeNode = (nodeId) => {
 }
 
 const removeEdge = (edgeId) => {
-  state.setNodes(state.edges.filter(edge => edge.id !== edgeId))
+  const { setEdges, edges } = state
+  setEdges(edges.filter(edge => edge.id !== edgeId))
 }
 
 ```
