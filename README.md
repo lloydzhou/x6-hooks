@@ -99,7 +99,7 @@ const addNode = () => {
 
 const addEdge = () => {
   setEdges([
-    ...edges.value, // nodes is ref
+    ...edges.value, // edges is ref
     {
       source,
       target
