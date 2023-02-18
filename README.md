@@ -2,6 +2,12 @@
 
 以数据驱动x6画布
 
+<a href="https://www.npmjs.com/package/x6-hooks"><img alt="NPM Package" src="https://img.shields.io/npm/v/x6-hooks.svg?style=flat-square"></a>
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/x6-hooks?style=flat-square)
+![npm](https://img.shields.io/npm/dm/x6-hooks?style=flat-square)
+<a href="/LICENSE"><img src="https://img.shields.io/github/license/lloydzhou/x6-hooks?style=flat-square" alt="MIT License"></a>
+
+
 ## react
 
 ```
