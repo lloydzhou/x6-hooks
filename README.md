@@ -7,6 +7,11 @@
 ![npm](https://img.shields.io/npm/dm/x6-hooks?style=flat-square)
 <a href="/LICENSE"><img src="https://img.shields.io/github/license/lloydzhou/x6-hooks?style=flat-square" alt="MIT License"></a>
 
+## install
+```
+npm install x6-hooks
+yarn add x6-hooks
+```
 
 ## react
 
