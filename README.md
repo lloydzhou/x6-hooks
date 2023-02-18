@@ -35,6 +35,24 @@ const addEdge = useCallback(() => {
   ])
 }, [edges])
 
+const removeNode = useCallback((nodeId) => {
+  setNodes(nodes.filter(node => node.id !== nodeId))
+  // remove related edges
+  setEdges(edges.filter(edge => {
+    if (edge.source === nodeId || edge.source.cell === nodeId) {
+      return false
+    }
+    if (edge.target === nodeId || edge.target.cell === nodeId) {
+      return false
+    }
+    return true
+  })
+}, [nodes, edges])
+
+const removeEdge = useCallback((edgeId) => {
+  setNodes(edges.filter(edge => edge.id !== edgeId))
+}, [edges])
+
 ```
 
 ## vue
@@ -74,6 +92,24 @@ const addEdge = () => {
       target
     }
   ])
+}
+
+const removeNode = (nodeId) => {
+  state.setNodes(state.nodes.filter(node => node.id !== nodeId))
+  // remove related edges
+  state.setEdges(state.edges.filter(edge => {
+    if (edge.source === nodeId || edge.source.cell === nodeId) {
+      return false
+    }
+    if (edge.target === nodeId || edge.target.cell === nodeId) {
+      return false
+    }
+    return true
+  })
+}
+
+const removeEdge = (edgeId) => {
+  state.setNodes(state.edges.filter(edge => edge.id !== edgeId))
 }
 
 ```
