@@ -29,25 +29,29 @@ useEffect(() => {
   setEdges([...])
 }, [])
 
-const addNode = useCallback(() => {
+const addNode = useCallback((node: Node.Metadata) => {
   // add node to nodes array
-  setNodes([
-    ...nodes,
-    {
-      id: 'id_xxx',
-      ...
-    }
-  ])
+  setNodes([...nodes, node])
 }, [nodes])
 
-const addEdge = useCallback(() => {
-  setEdges([
-    ...edges,
-    {
-      source,
-      target
-    }
-  ])
+const addEdge = useCallback((edge: Edge.Metadata) => {
+  setEdges([...edges, edge])
+}, [edges])
+
+const updateNode = useCallback((nodeId: string, node: Node.Metadata) => {
+  const index = nodes.findIndex(node => node.id === nodeId)
+  if (index > -1) {
+    nodes[index] = node
+    setNodes([...nodes])
+  }
+}, [nodes])
+
+const updateEdge = useCallback((edgeId: string, edge: Edge.Metadata) => {
+  const index = edges.findIndex(edge => edge.id === edgeId)
+  if (index > -1) {
+    edges[index] = edge
+    setEdges([...edges])
+  }
 }, [edges])
 
 const removeNode = useCallback((nodeId) => {
@@ -86,25 +90,35 @@ onMounted(() => {
   setEdges([...])
 })
 
-const addNode = () => {
+const addNode = (node: Node.Metadata) => {
   // add node to nodes array
   setNodes([
     ...nodes.value,  // nodes is ref
-    {
-      id: 'id_xxx',
-      ...
-    }
+    node,
   ])
 }
 
-const addEdge = () => {
+const addEdge = (edge: Edge.Metadata) => {
   setEdges([
     ...edges.value, // edges is ref
-    {
-      source,
-      target
-    }
+    edge,
   ])
+}
+
+const updateNode = (nodeId: string, node: Node.Metadata) => {
+  const index = nodes.value.findIndex(node => node.id === nodeId)
+  if (index > -1) {
+    nodes.value[index] = node
+    setNodes([...nodes.value])
+  }
+}
+
+const updateEdge = (edgeId: string, edge: Edge.Metadata) => {
+  const index = edges.value.findIndex(edge => edge.id === edgeId)
+  if (index > -1) {
+    edges.value[index] = edge
+    setEdges([...edges.value])
+  }
 }
 
 const removeNode = (nodeId) => {
