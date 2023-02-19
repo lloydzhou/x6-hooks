@@ -13,8 +13,18 @@ npm install x6-hooks
 yarn add x6-hooks
 ```
 
-## react
+## online demos
+### react
+[react demo](https://codesandbox.io/s/antv-x6-react-graph-demo-6ere13)
 
+[mindmap demo](https://codesandbox.io/s/x6-hooks-react-mindmap-demo-2t6954?file=/src/App.js)
+
+### vue
+[vue demo](https://codesandbox.io/s/x6-hooks-vue-demo-j19slj)
+
+
+## examples
+### react
 ```
 import { useGraphState } from 'x6-hooks/react'
 
@@ -74,7 +84,7 @@ const removeEdge = useCallback((edgeId) => {
 
 ```
 
-## vue
+### vue
 
 ```
 import { useGraphState } from 'x6-hooks/vue'
@@ -140,15 +150,4 @@ const removeEdge = (edgeId) => {
 }
 
 ```
-
-## examples
-
-### react
-[react demo](https://codesandbox.io/s/antv-x6-react-graph-demo-6ere13)
-
-[mindmap demo](https://codesandbox.io/s/x6-hooks-react-mindmap-demo-2t6954?file=/src/App.js)
-
-### vue
-[vue demo](https://codesandbox.io/s/x6-hooks-vue-demo-j19slj)
-
 
