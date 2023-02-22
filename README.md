@@ -30,6 +30,8 @@ import { useGraphState } from 'x6-hooks/react'
 
 const { nodes, setNodes, edges, setEdges, graph, setGraph } = useGraphState()
 
+// setNodes and setEdges return Promise
+
 useEffect(() => {
   const graph = new X6.Graph({ ...  })
   setGraph(graph)
@@ -90,6 +92,8 @@ const removeEdge = useCallback((edgeId) => {
 import { useGraphState } from 'x6-hooks/vue'
 
 const { nodes, edges, graph, setNodes, setEdges, setGraph } = useGraphState()
+
+// setNodes and setEdges return Promise
 
 onMounted(() => {
   const graph = new X6.Graph({ ...  })

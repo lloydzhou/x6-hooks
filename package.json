@@ -1,6 +1,6 @@
 {
   "name": "x6-hooks",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "files": [
     "utils.js",
