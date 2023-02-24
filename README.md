@@ -155,3 +155,11 @@ const removeEdge = (edgeId) => {
 
 ```
 
+## 集成
+配合[x6-graph](https://github.com/lloydzhou/x6-graph)使用
+
+1. 使用x6-hooks管理数据
+2. 使用x6-graph封装图实例
+3. x6-graph子组件的模式对业务逻辑做拆分组合（也可以用这个模式抽象一些常用的组件，例如将官方的plugin抽象成UI组件挂载到Graph内部）
+
+
